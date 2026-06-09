@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<security_report>
+    <title>Security Analysis based on Parkerian Hexad</title>
+    <student_id>Enter Your Student ID Here</student_id>
+
+    <confidentiality>
+        In this web application, confidentiality is maintained by keeping sensitive information such as the OpenWeather and Flickr API keys hidden inside the server-side config.php file. Users cannot access these keys directly through the browser. Furthermore, database credentials are kept secure on the server.
+    </confidentiality>
+
+    <possession>
+        Possession is maintained by ensuring that the database server (MySQL via XAMPP) is properly configured and access is restricted. Even if an attacker intercepts data, they do not have physical or root access to the database where the actual location and comment records are stored.
+    </possession>
+
+    <integrity>
+        Data integrity is highly protected in the comment submission process. By using PDO Prepared Statements (e.g., INSERT INTO comment...), the application prevents SQL Injection attacks. This ensures that attackers cannot alter, delete, or manipulate the existing places or comments in the database.
+    </integrity>
+
+    <authenticity>
+        Authenticity is addressed by validating user inputs before they are displayed. We use the htmlspecialchars() function in PHP when displaying comments. This ensures that any input is treated as text rather than executable code, preventing Cross-Site Scripting (XSS) and ensuring the content displayed is authentically from the user without malicious scripts attached.
+    </authenticity>
+
+    <availability>
+        Availability is significantly enhanced by implementing a file-based caching mechanism for the search function. If the database is under heavy load or temporarily unresponsive, the application can still serve recent search results from the local 'cache' folder, ensuring users can always access information.
+    </availability>
+
+    <utility>
+        The utility of the data is maximized by presenting it in a user-friendly and interactive format. Instead of showing raw JSON data from the APIs, the application parses the weather data and displays it using intuitive UI elements. Similarly, location coordinates are utilized to plot interactive markers on Leaflet maps, making the raw data highly useful to the end-user.
+    </utility>
+
+</security_report>
