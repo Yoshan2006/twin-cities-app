@@ -1,4 +1,4 @@
-# 🏙️ Twin Cities Web Application
+# Twin Cities Web Application
 
 ## 📌 Project Overview
 The **Twin Cities App** is a data-driven web application designed to provide users with real-time weather updates, places of interest, and travel routing between two selected cities (e.g., Liverpool and Dublin). This project demonstrates the practical application of back-end API integrations and secure database management.
